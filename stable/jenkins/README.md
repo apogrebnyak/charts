@@ -71,8 +71,8 @@ The following tables list the configurable parameters of the Jenkins chart and t
 | `master.numExecutors`             | Set Number of executors              | 0                                         |
 | `master.customJenkinsLabels`      | Append Jenkins labels to the master  | `{}`                                      |
 | `master.useSecurity`              | Use basic security                   | `true`                                    |
-| `master.securityRealm`            | Custom Security Realm                | Not set                                   |
-| `master.authorizationStrategy`    | Jenkins XML job config for AuthorizationStrategy | Not set                       |
+| `master.securityRealm`            | Jenkins XML Custom Security Realm    | `\|-`<br>&nbsp;&nbsp;`<securityRealm class="hudson.security.LegacySecurityRealm"/>` |
+| `master.authorizationStrategy`    | Jenkins XML job config for AuthorizationStrategy | `\|-`<br>&nbsp;&nbsp;`<authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy">`<br>&nbsp;&nbsp;&nbsp;&nbsp;`<denyAnonymousReadAccess>true</denyAnonymousReadAccess>`<br>&nbsp;&nbsp;`</authorizationStrategy>` |
 | `master.deploymentLabels`         | Custom Deployment labels             | Not set                                   |
 | `master.serviceLabels`            | Custom Service labels                | Not set                                   |
 | `master.podLabels`                | Custom Pod labels                    | Not set                                   |
@@ -132,6 +132,7 @@ The following tables list the configurable parameters of the Jenkins chart and t
 | `master.jenkinsUrlProtocol`       | Set protocol for JenkinsLocationConfiguration.xml | Set to `https` if `Master.ingress.tls`, `http` otherwise |
 | `master.JCasC.enabled`            | Wheter Jenkins Configuration as Code is enabled or not | `false`                 |
 | `master.JCasC.defaultConfig`      | Enables default Jenkins configuration via configuration as code plugin | `false` |
+| `master.JCasC.Config`      | Enables default Jenkins configuration via configuration as code plugin | `false` |
 | `master.JCasC.configScripts`      | List of Jenkins Config as Code scripts | `{}`                                    |
 | `master.enableXmlConfig`          | enables configuration done via XML files | `false`                               |
 | `master.sidecars.configAutoReload` | Jenkins Config as Code auto-reload settings |                                   |

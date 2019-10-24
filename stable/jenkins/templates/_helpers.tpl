@@ -83,6 +83,11 @@ jenkins:
     {{- else }}
       "plainText"
     {{- end }}
+  securityRealm:
+    legacy: {}
+  authorizationStrategy:
+    fullControlOnceLoggedIn:
+      allowAnonymousRead: false
   clouds:
   - kubernetes:
       containerCapStr: "{{ .Values.agent.containerCap }}"
