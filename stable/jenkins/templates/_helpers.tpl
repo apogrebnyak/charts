@@ -86,7 +86,7 @@ jenkins:
   securityRealm:
     legacy: {}
   authorizationStrategy:
-    fullControlOnceLoggedIn:
+    loggedInUsersCanDoAnything:
       allowAnonymousRead: false
   clouds:
   - kubernetes:
